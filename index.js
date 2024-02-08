@@ -23,19 +23,19 @@ function getComputerChoice() {
 //prompt input for player to choose weapon
 function getPlayerChoice() {
   const playerChoice = prompt(
-    "Choose your weapon!Rock🪨,Paper📜 or Scissors✂️?"
+    "Choose your weapon! Rock🪨, Paper📜, or Scissors✂️?"
   )
 
   //converts input string to lower case
-  const playerChoiceInLower = playerChoice.toLowerCase()
+  const playerChoiceLowerCase = playerChoice.toLowerCase()
 
   //filtering wrong inputs
   if (playerChoice === "") {
     return "empty"
-  } else if (!options.includes(playerChoiceInLower)) {
+  } else if (!options.includes(playerChoiceLowerCase)) {
     return "wrongString"
   } else {
-    return playerChoiceInLower
+    return playerChoiceLowerCase
   }
 }
 
@@ -80,15 +80,15 @@ function game() {
     const computerSelection = getComputerChoice()
     if (playerSelection === "empty") {
       console.log(
-        "Please type Rock , Paper or Scissors in the prompt input!Let's start from round 0"
+        "Please type Rock, Paper, or Scissors in the prompt input!Let's start from round 0"
       )
       i--
     } else if (playerSelection === "wrongString") {
-      console.log("Please type Rock , Paper or Scissors in the prompt input!")
+      console.log("Please type Rock, Paper, or Scissors in the prompt input!")
       i--
     } else {
       console.log(
-        `Round ${round}:${roundPlay(playerSelection, computerSelection)}`
+        `Round ${round}: ${roundPlay(playerSelection, computerSelection)}`
       )
     }
   }
@@ -104,9 +104,9 @@ function game() {
     console.log("We Have a Tie!")
   }
 
-  console.log(`->Score:  YOU:${playerScore}   COMPUTER:${computerScore}`)
+  console.log(`-> Score:  YOU:${playerScore}   COMPUTER:${computerScore}`)
 
-  return "Type another game() to start a new game"
+  return "Type another game() to start a new game."
 }
 
 alert("Please open the console to start the game.")
