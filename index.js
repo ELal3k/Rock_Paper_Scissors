@@ -82,8 +82,10 @@ function game() {
       console.log(
         "Please type Rock , Paper or Scissors in the prompt input!Let's start from round 0"
       )
+      i--
     } else if (playerSelection === "wrongString") {
       console.log("Please type Rock , Paper or Scissors in the prompt input!")
+      i--
     } else {
       console.log(
         `Round ${round}:${roundPlay(playerSelection, computerSelection)}`
@@ -103,6 +105,9 @@ function game() {
   }
 
   console.log(`->Score:  YOU:${playerScore}   COMPUTER:${computerScore}`)
+
+  return "Type another game() to start a new game"
 }
 
-game()
+alert("Please open the console to start the game.")
+console.log("Please type game() in the console.")
