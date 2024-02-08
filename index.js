@@ -105,6 +105,9 @@ function game() {
   }
 
   console.log(`->Score:  YOU:${playerScore}   COMPUTER:${computerScore}`)
+
+  return "Type another game() to start a new game"
 }
 
-game()
+alert("Please open the console to start the game.")
+console.log("Please type game() in the console.")
