@@ -27,7 +27,7 @@ function getPlayerChoice() {
   )
 
   //converts input string to lower case
-  const playerChoiceLowerCase = playerChoice.toLowerCase()
+  const playerChoiceLowerCase = playerChoice.toLowerCase().trim()
 
   //filtering wrong inputs
   if (playerChoice === "") {
