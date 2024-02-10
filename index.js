@@ -12,24 +12,17 @@ console.log("     ", "ROCK PAPER AND SCISSORS")
 console.log("----------------------------------------")
 console.log("")
 
-//Chooses a random weapon for the computer
 function getComputerChoice() {
   const randomIndex = Math.floor(Math.random() * options.length)
   const computerChoice = options[randomIndex]
-
   return computerChoice
 }
 
-//prompt input for player to choose weapon
 function getPlayerChoice() {
   const playerChoice = prompt(
     "Choose your weapon! Rock🪨, Paper📜, or Scissors✂️?"
   )
-
-  //converts input string to lower case
   const playerChoiceLowerCase = playerChoice.toLowerCase().trim()
-
-  //filtering wrong inputs
   if (playerChoice === "") {
     return "empty"
   } else if (!options.includes(playerChoiceLowerCase)) {
@@ -39,7 +32,6 @@ function getPlayerChoice() {
   }
 }
 
-//Winner algorithm
 function winnerCheck(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "Tie"
@@ -54,9 +46,7 @@ function winnerCheck(playerSelection, computerSelection) {
   }
 }
 
-// Round function
 function roundPlay(playerSelection, computerSelection) {
-  //call winner algo
   const result = winnerCheck(playerSelection, computerSelection)
   if (result === "Tie") {
     return "It's a Tie!"
@@ -69,11 +59,8 @@ function roundPlay(playerSelection, computerSelection) {
   }
 }
 
-//game function
 function game() {
   console.log("Let's Play!")
-
-  //game loop
   for (let i = 0; i < 5; i++) {
     let round = i + 1
     const playerSelection = getPlayerChoice()
@@ -92,7 +79,6 @@ function game() {
       )
     }
   }
-  // game ending and results
   console.log("-----------------")
   console.log("Game Over")
 
@@ -103,9 +89,7 @@ function game() {
   } else {
     console.log("We Have a Tie!")
   }
-
   console.log(`-> Score:  YOU:${playerScore}   COMPUTER:${computerScore}`)
-
   return "Type another game() to start a new game."
 }
 
